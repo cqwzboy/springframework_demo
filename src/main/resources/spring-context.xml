@@ -14,13 +14,15 @@
     <context:component-scan base-package="com.springframework.demo"/>
 
     <!--读取外部配置文件-->
-    <bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+    <!--<bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="locations">
             <list>
                 <value>classpath:jdbc.properties</value>
             </list>
         </property>
-    </bean>
+    </bean>-->
+
+    <context:property-placeholder location="classpath:jdbc.properties"/>
 
     <import resource="classpath:spring-jdbc.xml"/>
 
